@@ -1,25 +1,21 @@
+import unittest
 from tiny import Tiny
 
 t = Tiny('5SX0TEjkR1mLOw8Gvq2VyJxIFhgCAYidrclDWaM3so9bfzZpuUenKtP74QNH6B')
 
-print t.encode(5)
-# E
+class TinyTest(unittest.TestCase):
 
-print t.decode('E')
-# 5
+    def test_generation(self):
+        test_code = t.generate_set()
+        self.assertTrue(len(test_code) == 62)
 
-print t.encode(126)
-# XX
+    def test_encode(self):
+        self.assertEqual(t.encode(5), 'E')
+        self.assertEqual(t.encode(126), 'XX')
 
-print t.decode('XX')
-# 126
+    def test_decode(self):
+        self.assertEqual(t.decode('E'), 5)
+        self.assertEqual(t.decode('XX'), 126)
 
-print t.encode(999)
-# vk
-
-print t.decode('vk')
-# 999
-
-# Generate secret key
-print t.generate_set()
-# 5SX0TEjkR1mLOw8Gvq2VyJxI...
+if __name__ == '__main__':
+    unittest.main()
