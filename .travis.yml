@@ -5,6 +5,4 @@ python:
   - "3.2"
   - "3.3"
   - "3.4"
-  - "pypy"
-install: # No dependencies.
 script: python tests.py
