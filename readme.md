@@ -1,6 +1,6 @@
 # Tiny for Python
 
-A reversible base62 ID obfuscater
+[![Build Status](https://travis-ci.org/fdcore/tiny-python.svg)](https://travis-ci.org/fdcore/tiny-python)
 
 Tiny is a two-way integer obfuscator that converts integers to a string of characters, and a string of characters to an integer. This gives developers the ability to expose unique identifiers for resources in APIs that does not reveal the number of records in your database if you index your records using auto-incrementing primary keys. See the Usage section below for how easy it is to use!
 
